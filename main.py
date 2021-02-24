@@ -6,8 +6,8 @@ credentials = service_account.Credentials.from_service_account_file('/path/to/fi
 with open("pdf file", 'rb') as pdf_file:
     file_reader = PyPDF2.PdfFileReader(pdf_file)
     count = file_reader.numPages
+    text = ""
     for i in range(count):
-        text = ""
         page = file_reader.getPage(i)
         text += page.extractText()
 
